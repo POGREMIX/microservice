@@ -1,1 +1,1 @@
-path = "./Directory"
+path = "."

@@ -36,16 +36,14 @@ def get_files_meta(file_names):
 
 
 def get_file_extension(name):
-    parts = name.split(".")
-    if len(parts) == 1:
+    if os.path.isdir(os.path.join(path, name)):
         return "folder"
     else:
         return "file"
 
 
 def get_creation_time(name):
-    full_path = os.path.join(path, name)
-    return round(os.path.getctime(full_path))
+    return round(os.path.getctime(os.path.join(path, name)))
 
 
 if __name__ == '__main__':
